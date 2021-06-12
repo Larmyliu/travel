@@ -1,9 +1,11 @@
+/* eslint-disable no-debugger */
 import {joinTravel, finishPay} from './aboutOrder_data'
 const state = {
     joinTravel,
     finishPay,
     cancelOrder:[]
 }
+
   
 const mutations = {
     addOrder(state, req){
@@ -30,10 +32,14 @@ const mutations = {
         state.finishPay.push(req)
     },
     cancelOrder(state, req){
+        debugger
         for(let i = 0; i < state.joinTravel.length; i++){
             if(req['c_id'] === state.joinTravel[i]['c_id']){
-                
-                state.cancelOrder.push(state.joinTravel.splice(i,1))
+                let data = state.joinTravel.splice(i,1)
+                console.log(data)
+                state.cancelOrder = state.cancelOrder.concat(data)
+                console.log(state.cancelOrder)
+                break
             }
         }
         

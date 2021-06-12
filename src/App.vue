@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <el-container id="main">
+    <el-container id="main" >
       <el-header id="header">
-        <div class="el-col el-col-24">
+        <div class="el-col el-col-24" style="display:flex; justify-content: space-between;">
           <div class="tit">旅游管理系统</div>
+          <div class="tit" style="font-size:16px" >{{ $store.state.login.loginState }}</div>
         </div>
       </el-header>
       <el-container>
@@ -69,13 +70,13 @@
           </el-menu>
         </el-aside>
         <el-main>
-          <!-- <img src="https://www.hoki888.com/admin/editor/upload/images/20151016160445937.jpg" alt="" width="300px"> -->
+          <!-- <img v-if="$router.path == '/'" src="https://www.hoki888.com/admin/editor/upload/images/20151016160445937.jpg" alt="" width="300px"> -->
+          
           <router-view/>
         </el-main>
       </el-container>
       
     </el-container>
-    
   </div>
 </template>
 

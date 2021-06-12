@@ -6,13 +6,14 @@ import cancelTravel from '../components/cancelTravel.vue'
 import confirmOrder from '../components/confirmOrder.vue'
 import hasPayOrder from '../components/hasPayOrder.vue'
 import cancelOrder from '../components/cancelOrder.vue'
+import login from '../components/login.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    // component: Home
+    name: 'login',
+    component: login
   },{
     path:'/createTravel',
     name:'createTravel',

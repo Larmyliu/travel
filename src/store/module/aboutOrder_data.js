@@ -5,6 +5,7 @@ const joinTravel = [
         "a_child": "1",
         "a_mail": "4324",
         "a_name": "4324",
+        "a_sex": "男",
         "a_phone": "423432",
         "a_youbian": "4324",
         "a_address": "4324324324324324",
@@ -29,6 +30,7 @@ const joinTravel = [
     {
         "a_audit": "1",
         "a_birth": "2021-04-27",
+        "a_sex": "女",
         "a_child": "1",
         "a_mail": "4324",
         "a_name": "4324",

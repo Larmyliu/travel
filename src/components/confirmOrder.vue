@@ -1,29 +1,38 @@
 <template>
     <div>
         <el-container>
-            <el-table :data="$store.state.aboutOrder.joinTravel">
-                <el-table-column label="序号" type="index" width="100">
-                </el-table-column>
-                <el-table-column label="旅行团代码" prop="c_id"></el-table-column>
-                <el-table-column label="负责人姓名" prop="c_name"></el-table-column>
-                <el-table-column label="负责人电话" prop="c_phone"></el-table-column>
-                <el-table-column label="出发地" prop="c_start"></el-table-column>
-                <el-table-column label="旅行地" prop="c_end"></el-table-column>
-                <el-table-column label="出发时间" prop="c_goTime"></el-table-column>
-                <el-table-column label="申请人姓名" prop="a_name"></el-table-column>
-                <el-table-column label="申请人电话" prop="a_phone"></el-table-column>
-                <el-table-column label="大人数" prop="a_audit"></el-table-column>
-                <el-table-column label="小孩数" prop="a_child"></el-table-column>
-                <el-table-column label="已交定金" prop="hasPay"></el-table-column>
-                <el-table-column label="代缴金额" prop="shouldPay"></el-table-column>
-                <el-table-column label="操作">
-                    <template slot-scope="props">
-                        <el-button type="text" @click="openDialog(props.row)">完善</el-button>
-                        <el-button type="text" @click="surePay(props.row)">完成</el-button>
-                        <el-button type="text" @click="cancelTravel(props.row)">取消</el-button>
-                    </template>
-                </el-table-column>
-            </el-table>
+            <el-header>
+                <div style="display:flex">
+                    <el-input placeholder="请输入" style="width:200px; margin-right:10px"></el-input>
+                    <el-button type="primary" size="mini">搜索</el-button>
+                </div>
+            </el-header>
+            <el-main>
+                <el-table :data="$store.state.aboutOrder.joinTravel">
+                    <el-table-column label="序号" type="index" width="100">
+                    </el-table-column>
+                    <el-table-column label="旅行团代码" prop="c_id"></el-table-column>
+                    <el-table-column label="负责人姓名" prop="c_name"></el-table-column>
+                    <el-table-column label="负责人电话" prop="c_phone"></el-table-column>
+                    <el-table-column label="出发地" prop="c_start"></el-table-column>
+                    <el-table-column label="旅行地" prop="c_end"></el-table-column>
+                    <el-table-column label="出发时间" prop="c_goTime"></el-table-column>
+                    <el-table-column label="申请人姓名" prop="a_name"></el-table-column>
+                    <el-table-column label="申请人电话" prop="a_phone"></el-table-column>
+                    <el-table-column label="大人数" prop="a_audit"></el-table-column>
+                    <el-table-column label="小孩数" prop="a_child"></el-table-column>
+                    <el-table-column label="已交定金" prop="hasPay"></el-table-column>
+                    <el-table-column label="代缴金额" prop="shouldPay"></el-table-column>
+                    <el-table-column label="操作">
+                        <template slot-scope="props">
+                            <el-button type="text" @click="openDialog(props.row)">完善</el-button>
+                            <el-button type="text" @click="surePay(props.row)">完成</el-button>
+                            <el-button type="text" @click="cancelTravel(props.row)">取消</el-button>
+                        </template>
+                    </el-table-column>
+                </el-table>
+            </el-main>
+            
         </el-container>
         <el-dialog :visible="joinTravelDialog" :show-close="false" title="完善信息">
             <el-form :model="relateForm" label-width="120px" ref="relateForm">
@@ -136,7 +145,8 @@ export default {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
             }).then(() => {
-                
+                // eslint-disable-next-line no-debugger
+                debugger
                 self.$store.dispatch('cancelOrder',req)
             }).catch(() => {
                 
@@ -155,6 +165,7 @@ export default {
                     let req = Object.assign({}, self.currentItem)
                     console.log(req)
                     self.$store.dispatch('updateNum', req);
+                    this.joinTravelDialog = false
                 } else {
                     console.log('error submit!!');
                     return false;
