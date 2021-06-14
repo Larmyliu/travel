@@ -3,12 +3,12 @@
         <el-container>
             <el-header>
                 <div style="display:flex">
-                    <el-input placeholder="请输入" style="width:200px; margin-right:10px" v-model="value"></el-input>
+                    <el-input placeholder="请输入" style="width:200px; margin-right:10px"></el-input>
                     <el-button type="primary" size="mini">搜索</el-button>
                 </div>
             </el-header>
             <el-main>
-                <el-table :data="$store.state.aboutOrder.joinTravel" show-overflow-tooltip>
+                <el-table :data="$store.state.aboutOrder.joinTravel">
                     <el-table-column label="序号" type="index" width="100">
                     </el-table-column>
                     <el-table-column label="旅游团代码" prop="c_id"></el-table-column>
@@ -25,16 +25,9 @@
                     <el-table-column label="代缴金额" prop="shouldPay"></el-table-column>
                     <el-table-column label="操作">
                         <template slot-scope="props">
-                            <div>
-                                <el-button type="text" @click="openDialog(props.row)">完善</el-button>
-                            </div>
-                            <div>
-                                <el-button type="text" @click="surePay(props.row)">完成</el-button>
-                            </div>
-                            <div>
-                                <el-button type="text" @click="cancelTravel(props.row)">取消</el-button>
-                            </div>
-                            
+                            <el-button type="text" @click="openDialog(props.row)">完善</el-button>
+                            <el-button type="text" @click="surePay(props.row)">完成</el-button>
+                            <el-button type="text" @click="cancelTravel(props.row)">取消</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -87,7 +80,6 @@ export default {
             payDialog: false,
             payCount:0,
             shouldPay:0,
-            value:'',
             relateForm:{
                 joinForm:[{
                     j_name: '',

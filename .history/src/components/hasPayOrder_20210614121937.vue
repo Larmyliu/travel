@@ -1,10 +1,3 @@
-<!--
- * @Author: army liu
- * @Date: 2021-06-14 12:04:02
- * @LastEditors: army liu
- * @LastEditTime: 2021-06-14 12:19:38
- * @FilePath: \travel\src\components\hasPayOrder.vue
--->
 <template>
     <div>
         <el-container>

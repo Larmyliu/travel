@@ -3,7 +3,7 @@
         <el-container>
             <el-header>
                 <div style="display:flex">
-                    <el-input placeholder="请输入" style="width:200px; margin-right:10px" v-model="value"></el-input>
+                    <el-input placeholder="请输入" style="width:200px; margin-right:10px"></el-input>
                     <el-button type="primary" size="mini">搜索</el-button>
                 </div>
             </el-header>
@@ -87,7 +87,6 @@ export default {
             payDialog: false,
             payCount:0,
             shouldPay:0,
-            value:'',
             relateForm:{
                 joinForm:[{
                     j_name: '',

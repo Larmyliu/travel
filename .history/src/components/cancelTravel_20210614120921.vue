@@ -1,16 +1,9 @@
-<!--
- * @Author: army liu
- * @Date: 2021-06-14 12:04:02
- * @LastEditors: army liu
- * @LastEditTime: 2021-06-14 12:18:46
- * @FilePath: \travel\src\components\cancelTravel.vue
--->
 <template>
     <div>
         <el-container>
             <el-header>
                 <div style="display:flex">
-                    <el-input placeholder="请输入" style="width:200px; margin-right:10px" v-model="value"></el-input>
+                    <el-input placeholder="请输入" style="width:200px; margin-right:10px"></el-input>
                     <el-button type="primary" size="mini">搜索</el-button>
                 </div>
             </el-header>
@@ -42,7 +35,7 @@ export default {
     name: 'TravelprojectSuretravel',
     data() {
         return {
-            value:''
+            
         };
     },
     mounted() {

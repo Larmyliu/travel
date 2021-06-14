@@ -21,10 +21,10 @@
             <el-submenu index="2">
               <template slot="title">
                 <i class="el-icon-location"></i>
-                <span>旅游团相关</span>
+                <span>旅行团相关</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="/createTravel">创建旅游团</el-menu-item>
+                <el-menu-item index="/createTravel">创建旅行团</el-menu-item>
               </el-menu-item-group>
               <el-menu-item-group>
                 <el-menu-item index="/sureTravel">已开团</el-menu-item>

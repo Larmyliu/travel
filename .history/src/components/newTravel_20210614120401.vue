@@ -7,14 +7,14 @@
                 </div>
             </el-header> -->
         <el-container id="main">
-            <el-button type="primary" @click="createTravel">创建旅游团</el-button>
+            <el-button type="primary" @click="createTravel">创建旅行团</el-button>
             
         </el-container>
         
         <el-table :data="$store.state.aboutTravel.createTravel" border style="margin:20px auto">
             <el-table-column label="序号" type="index" width="100">
             </el-table-column>
-            <el-table-column label="旅游团代码" prop="c_id"></el-table-column>
+            <el-table-column label="旅行团代码" prop="c_id"></el-table-column>
             <el-table-column label="负责人姓名" prop="c_name"></el-table-column>
             <el-table-column label="负责人电话" prop="c_phone"></el-table-column>
             <el-table-column label="出发地" prop="c_start"></el-table-column>
@@ -30,7 +30,7 @@
                 </template>
             </el-table-column>
         </el-table>
-        <el-dialog title="旅游团发团" :visible.sync="updateDialogVisible" width="800px">
+        <el-dialog title="旅行团发团" :visible.sync="updateDialogVisible" width="800px">
             <el-form :model="createFrom" :rules="ruleForm" label-position="right" label-width="100px">
                 <el-form-item label="负责人姓名" prop="c_name" >
                     <el-input v-model="createFrom.c_name" disabled></el-input>
@@ -85,7 +85,7 @@
                 <el-button type="primary" @click="sendTravel">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="创建旅游团" :visible.sync="dialogFormVisible" width="800px">
+        <el-dialog title="创建旅行团" :visible.sync="dialogFormVisible" width="800px">
             <el-form :model="createFrom" :rules="ruleForm" label-position="right" label-width="100px">
                 <el-form-item label="负责人姓名" prop="c_name">
                     <el-input v-model="createFrom.c_name"></el-input>
@@ -144,7 +144,7 @@ export default {
         return {
             dialogFormVisible:false,
             updateDialogVisible: false,
-            dialogTit: '创建旅游团',
+            dialogTit: '创建旅行团',
             createFrom:{
                 c_name: '',
                 c_phone: '',
@@ -196,7 +196,7 @@ export default {
             let req = Object.assign(this.createFrom)
             req["c_id"] = Math.floor(Math.random()*(9999 - 1000) + 1000);
             console.log(this.$store.state)
-            if(this.dialogTit == '创建旅游团'){
+            if(this.dialogTit == '创建旅行团'){
                 this.$store.dispatch('addTravel', req)
             }else{
                 this.$store.dispatch('updateTravel', req)
@@ -207,12 +207,12 @@ export default {
             
         },
         createTravel(){
-            this.dialogTit = '创建旅游团'
+            this.dialogTit = '创建旅行团'
             this.dialogFormVisible = true
         },
         updateCreateDialog(row){
             this.createFrom = row
-            this.dialogTit = '旅游团信息更新'
+            this.dialogTit = '旅行团信息更新'
             this.dialogFormVisible = true
         },
         updateDialog(row){

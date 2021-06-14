@@ -3,7 +3,7 @@
         <el-container>
             <el-header>
                 <div style="display:flex">
-                    <el-input placeholder="请输入" style="width:200px; margin-right:10px" v-model="value"></el-input>
+                    <el-input placeholder="请输入" style="width:200px; margin-right:10px"></el-input>
                     <el-button type="primary" size="mini">搜索</el-button>
                 </div>
             </el-header>
@@ -11,7 +11,7 @@
                 <el-table :data="$store.state.aboutTravel.sureTravel">
                     <el-table-column label="序号" type="index" width="100">
                     </el-table-column>
-                    <el-table-column label="旅游团代码" prop="c_id"></el-table-column>
+                    <el-table-column label="旅行团代码" prop="c_id"></el-table-column>
                     <el-table-column label="负责人姓名" prop="c_name"></el-table-column>
                     <el-table-column label="负责人电话" prop="c_phone"></el-table-column>
                     <el-table-column label="出发地" prop="c_start"></el-table-column>
@@ -102,7 +102,6 @@ export default {
             payDialog: false,
             payCount:0,
             shouldPay:0,
-            value: '',
             joinForm:{
                 a_name:'',
                 a_sex:'',

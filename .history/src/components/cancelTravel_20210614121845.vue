@@ -1,10 +1,3 @@
-<!--
- * @Author: army liu
- * @Date: 2021-06-14 12:04:02
- * @LastEditors: army liu
- * @LastEditTime: 2021-06-14 12:18:46
- * @FilePath: \travel\src\components\cancelTravel.vue
--->
 <template>
     <div>
         <el-container>
